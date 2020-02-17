@@ -6,13 +6,23 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/classnames": "^2.2.9",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
+    "@types/node-sass": "^4.11.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.3",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "mobx": "^4.15.0",
+    "mobx-react": "^6.1.8",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
+    "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.4.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -28,12 +38,18 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "ie 11"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "ie 11"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3"
   }
 }
