@@ -7,12 +7,10 @@ export default class CounterStore {
   @action
   increase = (): void => {
     this.counter++;
-    console.log('counter', this.counter);
   };
 
   @action
   decrease = (): void => {
     this.counter--;
-    console.log('counter', this.counter);
   };
 }
