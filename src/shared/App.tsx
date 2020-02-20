@@ -4,6 +4,7 @@ import classnames from 'classnames/bind';
 
 import Home from 'pages/home/Home';
 import Counter from 'pages/counter/Counter';
+import Posts from 'pages/posts/Posts';
 
 import styles from './App.scss';
 
@@ -16,6 +17,7 @@ function App(): JSX.Element {
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/counter" component={Counter} />
+          <Route path="/posts" component={Posts} />
         </Switch>
       </main>
     </div>

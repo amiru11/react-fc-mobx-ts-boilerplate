@@ -1,5 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
-import classnames from 'classnames/bind';
 
-import styles from './Post.scss';
+import useStore from 'hooks/useStore';
+import { bindClassName } from 'lib/utils';
+
+import PostItem from 'components/posts/PostItem';
+
+import styles from './Posts.scss';
+
+const cx = bindClassName(styles);
+
+const Posts = observer(() => {
+  const { postsStore } = useStore();
+  const { posts, isLoading, error, loadPosts } = postsStore;
+  useEffect(() => {
+    loadPosts();
+  }, [loadPosts]);
+  if (isLoading) return <>Loading,,,</>;
+  if (error) return <>Error!!</>;
+  return (
+    <div className={cx('posts-container')}>
+      {posts?.length &&
+        posts.map(post => <PostItem key={post.id} post={post} />)}
+    </div>
+  );
+});
+
+export default Posts;

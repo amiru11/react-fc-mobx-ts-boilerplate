@@ -1,12 +1,12 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import classnames from 'classnames/bind';
 
 import useStore from 'hooks/useStore';
+import { bindClassName } from 'lib/utils';
 
 import styles from './Counter.scss';
 
-const cx = classnames.bind(styles);
+const cx = bindClassName.bind(styles);
 
 const Counter = observer(() => {
   const { counterStore } = useStore();

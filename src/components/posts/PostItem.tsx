@@ -18,7 +18,7 @@ interface IPostItem {
 
 const cx = bindClassName(styles);
 
-function PostItemComponent(post: IPostItem): JSX.Element {
+function PostItemComponent({ post }: IPostItem): JSX.Element {
   return (
     <div className={cx('item-wrap')}>
       <Link to={`/posts/${post.id}`}>
@@ -27,3 +27,5 @@ function PostItemComponent(post: IPostItem): JSX.Element {
     </div>
   );
 }
+
+export default PostItemComponent;
