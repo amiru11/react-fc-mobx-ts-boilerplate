@@ -1,5 +1,5 @@
 import React from 'react';
-import { useObserver } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { useHistory } from 'react-router-dom';
 
 import useStore from 'hooks/useStore';
@@ -12,7 +12,7 @@ import styles from './PostsCreate.scss';
 
 const cx = bindClassName(styles);
 
-const PostsCreate = () => {
+const PostsCreate = observer(() => {
   const { postsStore } = useStore();
   const { push } = useHistory();
   const {
@@ -32,7 +32,7 @@ const PostsCreate = () => {
     }
   };
 
-  return useObserver(() => (
+  return (
     <div className={cx('create-container')}>
       <label htmlFor="title">Title</label>
       <Input
@@ -52,7 +52,7 @@ const PostsCreate = () => {
       <pre />
       <button onClick={create}>Create</button>
     </div>
-  ));
-};
+  );
+});
 
 export default PostsCreate;
