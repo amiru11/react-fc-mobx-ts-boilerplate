@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const usePromise = (request, deps) => {
-  const [resolve, setResolve] = useState<Promise<void>>(null);
+const usePromise = (request, deps): [boolean, Promise<void>, string] => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [resolve, setResolve] = useState<Promise<void>>(null);
   const [error, setError] = useState<string>(null);
 
-  const fetchProcess = useCallback(async () => {
+  const fetchProcess = useCallback(async (): Promise<void> => {
     setIsLoading(true);
     try {
       const result = await request();
@@ -14,7 +14,8 @@ const usePromise = (request, deps) => {
       setError(error);
     }
     setIsLoading(false);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
 
   useEffect(() => {
     fetchProcess();
