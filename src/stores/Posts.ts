@@ -43,8 +43,8 @@ export default class CounterStore {
     } catch (err) {
       runInAction('Load PostById fail', () => {
         // @TODO errorHandler 만들어서 처리하기
-        alert(err.message);
         this.isLoading = false;
+        this.error = err;
       });
     }
   };
