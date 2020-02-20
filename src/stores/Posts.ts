@@ -4,7 +4,12 @@ import { IPost } from 'stores/interfaces/post';
 
 export default class CounterStore {
   @observable public posts: IPost[] = null;
-  @observable public post: IPost = null;
+  @observable public post: IPost = {
+    id: null,
+    userId: null,
+    title: '',
+    body: '',
+  };
   @observable public isLoading: boolean = false;
   @observable public error: string = null;
 
