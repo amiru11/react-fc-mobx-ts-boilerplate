@@ -25,8 +25,8 @@ export default class CounterStore {
     } catch (err) {
       runInAction('Load Posts fail', () => {
         // @TODO errorHandler 만들어서 처리하기
-        this.error = err;
         this.isLoading = false;
+        this.error = err;
       });
     }
   };

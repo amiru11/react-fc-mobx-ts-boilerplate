@@ -12,7 +12,7 @@ const cx = bindClassName(styles);
 const PostsDetail = observer(() => {
   const { id } = useParams();
   const { postsStore } = useStore();
-  const { post, isLoading, error, loadPostById } = postsStore;
+  const { getPost: post, isLoading, error, loadPostById } = postsStore;
 
   useEffect(() => {
     loadPostById(Number(id));

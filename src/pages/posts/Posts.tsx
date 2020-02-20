@@ -12,7 +12,7 @@ const cx = bindClassName(styles);
 
 const Posts = observer(() => {
   const { postsStore } = useStore();
-  const { posts, isLoading, error, loadPosts } = postsStore;
+  const { getPosts: posts, isLoading, error, loadPosts } = postsStore;
   useEffect(() => {
     loadPosts();
   }, [loadPosts]);

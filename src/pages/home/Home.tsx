@@ -11,6 +11,7 @@ function Home(): JSX.Element {
     <>
       <section className={cx('section-2')}>
         <Link to="/counter">Go to Counter test</Link>
+        <br />
         <Link to="/posts">Go to Posts test</Link>
       </section>
     </>
