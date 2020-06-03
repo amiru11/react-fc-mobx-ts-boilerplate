@@ -2,7 +2,7 @@ import { observable, action, computed, runInAction } from 'mobx';
 import * as API from 'api/posts';
 import { IPost } from 'stores/interfaces/post';
 
-export default class CounterStore {
+export default class PostStore {
   @observable public posts: IPost[] = null;
   @observable public post: IPost = {
     id: null,
